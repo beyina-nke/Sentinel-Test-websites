@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Copperline Bank Arkose</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script>
+      function setupArkose(myArkose) {
+        window.copperlineArkose = myArkose;
+        myArkose.setConfig({
+          selector: "#arkose-challenge",
+          onCompleted: function (response) {
+            document.querySelector("#arkose-token").value = response.token;
+          }
+        });
+      }
+    </script>
+    <script src="https://client-api.arkoselabs.com/v2/YOUR-ARKOSE-PUBLIC-KEY/api.js" data-callback="setupArkose" async defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="mark">C</span><span>Copperline Bank</span></a><nav class="nav"><a href="index.html">Home</a><a aria-current="page" href="contact.html">Contact</a></nav></div></header>
+      <main class="section split">
+        <section class="content">
+          <h1>Contact Copperline</h1>
+          <p>Arkose Labs requires an account-specific public key. Replace the public-key segment in the script URL to load the real enforcement challenge.</p>
+        </section>
+        <section class="panel">
+          <form class="contact-form" data-demo-form data-provider="Arkose Labs">
+            <div class="field"><label for="ak-name">Name</label><input id="ak-name" name="name" required></div>
+            <div class="field"><label for="ak-email">Email</label><input id="ak-email" name="email" type="email" required></div>
+            <div class="field"><label for="ak-topic">Topic</label><select id="ak-topic" name="topic"><option>Account access</option><option>Business banking</option><option>Fraud concern</option></select></div>
+            <div class="field"><label for="ak-message">Message</label><textarea id="ak-message" name="message" required></textarea></div>
+            <input id="arkose-token" name="arkose-token" type="hidden">
+            <div class="captcha-slot"><div id="arkose-challenge" class="arkose-placeholder">Arkose enforcement challenge loads here after replacing <code>YOUR-ARKOSE-PUBLIC-KEY</code>.</div></div>
+            <button class="button" type="submit">Send secure message</button>
+            <p class="status" data-status></p>
+          </form>
+        </section>
+      </main>
+      <footer class="footer"><div class="footer-inner"><a href="../index.html">Back to CAPTCHA demos</a></div></footer>
+    </div>
+    <script src="../assets/forms.js"></script>
+  </body>
+</html>

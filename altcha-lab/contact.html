@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Proof Lab ALTCHA</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script async defer src="https://cdn.jsdelivr.net/gh/altcha-org/altcha/dist/altcha.min.js" type="module"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="mark">P</span><span>Proof Lab</span></a><nav class="nav"><a href="index.html">Home</a><a aria-current="page" href="contact.html">Contact</a></nav></div></header>
+      <main class="section split">
+        <section class="content">
+          <h1>Contact Proof Lab</h1>
+          <p>ALTCHA is a proof-of-work CAPTCHA alternative. The widget needs a challenge endpoint, so replace the demo URL with your server route or ALTCHA Sentinel challenge URL.</p>
+        </section>
+        <section class="panel">
+          <form class="contact-form" data-demo-form data-provider="ALTCHA">
+            <div class="field"><label for="al-name">Name</label><input id="al-name" name="name" required></div>
+            <div class="field"><label for="al-email">Email</label><input id="al-email" name="email" type="email" required></div>
+            <div class="field"><label for="al-message">Message</label><textarea id="al-message" name="message" required></textarea></div>
+            <div class="captcha-slot">
+              <altcha-widget challengeurl="/api/altcha/challenge"></altcha-widget>
+            </div>
+            <p class="form-note">For this static demo, <code>/api/altcha/challenge</code> is the backend endpoint you would add before production.</p>
+            <button class="button" type="submit">Send research note</button>
+            <p class="status" data-status></p>
+          </form>
+        </section>
+      </main>
+      <footer class="footer"><div class="footer-inner"><a href="../index.html">Back to CAPTCHA demos</a></div></footer>
+    </div>
+    <script src="../assets/forms.js"></script>
+  </body>
+</html>

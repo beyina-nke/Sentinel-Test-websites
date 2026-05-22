@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Northline Studio | hCaptcha SPA Demo</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="#home"><span class="mark">N</span><span>Northline Studio</span></a>
+          <nav class="nav" aria-label="Northline routes">
+            <a href="#home" data-route-link="home" aria-current="page">Work</a>
+            <a href="#about" data-route-link="about">About</a>
+            <a href="#contact" data-route-link="contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <main class="section">
+        <section class="route active" data-route="home">
+          <div class="section-head"><div><h1>Northline Studio</h1><p>A single-page studio demo using hCaptcha on the contact route.</p></div></div>
+          <div class="grid">
+            <article class="card"><h3>Identity systems</h3><p>Brand foundations for product teams preparing for launch.</p></article>
+            <article class="card"><h3>Interface polish</h3><p>Design passes that make product screens calmer and easier to scan.</p></article>
+            <article class="card"><h3>Campaign pages</h3><p>Focused pages for releases, pilots, and partner announcements.</p></article>
+          </div>
+        </section>
+        <section class="route" data-route="about">
+          <div class="section-head"><div><h1>About</h1><p>Northline keeps strategy, visual design, and front-end prototyping close together.</p></div></div>
+          <div class="content"><p>The SPA routing is intentionally small: it swaps sections in place while keeping the hCaptcha script loaded globally for the contact form.</p></div>
+        </section>
+        <section class="route" data-route="contact">
+          <div class="split">
+            <section class="content">
+              <h1>Start a project</h1>
+              <p>This form uses hCaptcha’s widget class and documented test sitekey. Successful challenges add an <code>h-captcha-response</code> token to the form.</p>
+            </section>
+            <section class="panel" aria-label="Contact form">
+              <form class="contact-form" data-demo-form data-provider="hCaptcha">
+                <div class="field"><label for="hc-name">Name</label><input id="hc-name" name="name" required></div>
+                <div class="field"><label for="hc-email">Email</label><input id="hc-email" name="email" type="email" required></div>
+                <div class="field"><label for="hc-budget">Budget</label><select id="hc-budget" name="budget"><option>Exploring</option><option>Under $10k</option><option>$10k-$25k</option><option>$25k+</option></select></div>
+                <div class="field"><label for="hc-message">Message</label><textarea id="hc-message" name="message" required></textarea></div>
+                <div class="captcha-slot"><div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div></div>
+                <button class="button" type="submit">Send inquiry</button>
+                <p class="status" data-status></p>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"><div class="footer-inner"><a href="../index.html">Back to CAPTCHA demos</a></div></footer>
+    </div>
+    <script src="../assets/spa.js"></script>
+    <script src="../assets/forms.js"></script>
+  </body>
+</html>

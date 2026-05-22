@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saved Submissions | Sentinel CAPTCHA Demos</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="index.html"><span class="mark">S</span><span>Sentinel CAPTCHA Demos</span></a>
+          <nav class="nav" aria-label="Submissions navigation">
+            <a href="index.html">Demos</a>
+            <a aria-current="page" href="submissions.html">Submissions</a>
+          </nav>
+        </div>
+      </header>
+      <main class="section">
+        <div class="section-head">
+          <div>
+            <h1>Saved Submissions</h1>
+            <p>Every demo form saves its submitted fields here in this browser. This is a local testing inbox, not a production backend.</p>
+          </div>
+          <button class="button secondary" type="button" data-clear-submissions>Clear all</button>
+        </div>
+        <p class="panel" data-empty-state>No submissions yet. Open a demo contact form, submit it, then return here.</p>
+        <div class="submission-list" data-submission-list></div>
+      </main>
+      <footer class="footer"><div class="footer-inner">Stored locally in your browser with <code>localStorage</code>.</div></footer>
+    </div>
+    <script src="assets/submissions.js"></script>
+  </body>
+</html>

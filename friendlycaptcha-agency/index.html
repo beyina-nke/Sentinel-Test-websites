@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Harbor & Field | Friendly Captcha SPA Demo</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.19/widget.module.min.js" async defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.19/widget.min.js" async defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="#home"><span class="mark">F</span><span>Harbor & Field</span></a>
+          <nav class="nav" aria-label="Harbor routes">
+            <a href="#home" data-route-link="home" aria-current="page">Home</a>
+            <a href="#services" data-route-link="services">Services</a>
+            <a href="#contact" data-route-link="contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <main class="section">
+        <section class="route active" data-route="home">
+          <div class="section-head"><div><h1>Harbor & Field</h1><p>A Friendly Captcha SPA demo for a small communications agency.</p></div></div>
+          <div class="grid"><article class="card"><h3>Launch narratives</h3><p>Messaging for new products and public milestones.</p></article><article class="card"><h3>Founder counsel</h3><p>Practical guidance before interviews, panels, and announcements.</p></article><article class="card"><h3>Editorial systems</h3><p>Repeatable calendars that keep teams publishing without chaos.</p></article></div>
+        </section>
+        <section class="route" data-route="services">
+          <div class="section-head"><div><h1>Services</h1><p>Lean strategy, clear writing, and hands-on publishing support.</p></div></div>
+          <div class="content"><p>Friendly Captcha is placed on the contact route, where it can create a solution token for server validation after the user completes the proof-of-work challenge.</p></div>
+        </section>
+        <section class="route" data-route="contact">
+          <div class="split">
+            <section class="content">
+              <h1>Contact Harbor & Field</h1>
+              <p>The widget markup uses <code>frc-captcha</code>. Friendly Captcha requires a real account sitekey, so the demo includes a replacement placeholder.</p>
+            </section>
+            <section class="panel">
+              <form class="contact-form" data-demo-form data-provider="Friendly Captcha">
+                <div class="field"><label for="fc-name">Name</label><input id="fc-name" name="name" required></div>
+                <div class="field"><label for="fc-email">Email</label><input id="fc-email" name="email" type="email" required></div>
+                <div class="field"><label for="fc-message">Message</label><textarea id="fc-message" name="message" required></textarea></div>
+                <div class="captcha-slot">
+                  <div class="frc-captcha" data-sitekey="YOUR-FRIENDLY-CAPTCHA-SITEKEY"></div>
+                </div>
+                <p class="form-note">Replace <code>YOUR-FRIENDLY-CAPTCHA-SITEKEY</code> before using this page live.</p>
+                <button class="button" type="submit">Send brief</button>
+                <p class="status" data-status></p>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"><div class="footer-inner"><a href="../index.html">Back to CAPTCHA demos</a></div></footer>
+    </div>
+    <script src="../assets/spa.js"></script>
+    <script src="../assets/forms.js"></script>
+  </body>
+</html>

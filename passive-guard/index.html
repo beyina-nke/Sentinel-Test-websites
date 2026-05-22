@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SignalDesk | Passive Bot Detection Demo</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="#home"><span class="mark">S</span><span>SignalDesk</span></a>
+          <nav class="nav" aria-label="SignalDesk routes">
+            <a href="#home" data-route-link="home" aria-current="page">Signals</a>
+            <a href="#contact" data-route-link="contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <main class="section">
+        <section class="route active" data-route="home">
+          <div class="section-head">
+            <div>
+              <h1>Passive Guard Simulation</h1>
+              <p>A local JavaScript demo that mimics the shape of passive bot detection: collect browser interaction signals, produce a risk score, and send the verdict with the form.</p>
+            </div>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <h3>Behavior signals</h3>
+              <p>Pointer movement, keyboard use, field focus, time on page, scrolling, and tab visibility feed the local score.</p>
+            </article>
+            <article class="card">
+              <h3>Silent challenge</h3>
+              <p>No visible puzzle is shown. The visitor receives a low-risk, review, or high-risk verdict when submitting.</p>
+            </article>
+            <article class="card">
+              <h3>Server gate</h3>
+              <p>A production version would combine this with a signed challenge, rate limits, and server-side verification.</p>
+            </article>
+          </div>
+        </section>
+        <section class="route" data-route="contact">
+          <div class="split">
+            <section class="content">
+              <h1>Contact SignalDesk</h1>
+              <p>This form uses the local <code>PassiveGuard</code> helper to simulate Turnstile-style passive assessment. The submitted form includes hidden risk fields for server review.</p>
+              <div class="signal-meter" aria-label="Passive signal meter">
+                <strong>Passive signal model</strong>
+                <div class="signal-bar"><span></span></div>
+                <p class="form-note">Interact naturally with the page before submitting to produce a stronger human signal.</p>
+              </div>
+            </section>
+            <section class="panel">
+              <form class="contact-form" data-demo-form data-provider="Passive Guard" data-passive-guard>
+                <div class="field"><label for="pg-name">Name</label><input id="pg-name" name="name" autocomplete="name" required></div>
+                <div class="field"><label for="pg-email">Email</label><input id="pg-email" name="email" type="email" autocomplete="email" required></div>
+                <div class="field"><label for="pg-company">Company</label><input id="pg-company" name="company" autocomplete="organization"></div>
+                <div class="field"><label for="pg-message">Message</label><textarea id="pg-message" name="message" required></textarea></div>
+                <input name="passive-score" type="hidden">
+                <input name="passive-verdict" type="hidden">
+                <input name="passive-details" type="hidden">
+                <button class="button" type="submit">Send with passive check</button>
+                <p class="status" data-status></p>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="footer"><div class="footer-inner"><a href="../index.html">Back to CAPTCHA demos</a></div></footer>
+    </div>
+    <script src="../assets/spa.js"></script>
+    <script src="../assets/passive-guard.js"></script>
+    <script src="../assets/forms.js"></script>
+  </body>
+</html>
