@@ -12,6 +12,10 @@
           selector: "#arkose-challenge",
           onCompleted: function (response) {
             document.querySelector("#arkose-token").value = response.token;
+            window.sentinelCaptchaSolved(response.token);
+          },
+          onError: function () {
+            window.sentinelCaptchaError();
           }
         });
       }

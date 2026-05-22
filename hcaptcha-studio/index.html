@@ -44,7 +44,7 @@
                 <div class="field"><label for="hc-email">Email</label><input id="hc-email" name="email" type="email" required></div>
                 <div class="field"><label for="hc-budget">Budget</label><select id="hc-budget" name="budget"><option>Exploring</option><option>Under $10k</option><option>$10k-$25k</option><option>$25k+</option></select></div>
                 <div class="field"><label for="hc-message">Message</label><textarea id="hc-message" name="message" required></textarea></div>
-                <div class="captcha-slot"><div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div></div>
+                <div class="captcha-slot"><div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001" data-callback="sentinelCaptchaSolved" data-expired-callback="sentinelCaptchaExpired" data-error-callback="sentinelCaptchaError"></div></div>
                 <button class="button" type="submit">Send inquiry</button>
                 <p class="status" data-status></p>
               </form>

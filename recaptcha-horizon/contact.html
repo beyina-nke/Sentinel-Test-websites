@@ -29,7 +29,7 @@
             <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
             <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-            <div class="captcha-slot"><div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div></div>
+            <div class="captcha-slot"><div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="sentinelCaptchaSolved" data-expired-callback="sentinelCaptchaExpired" data-error-callback="sentinelCaptchaError"></div></div>
             <button class="button" type="submit">Send message</button>
             <p class="status" data-status></p>
           </form>

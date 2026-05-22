@@ -279,20 +279,46 @@ h1 {
 }
 
 .form-note,
-.status {
+.status,
+.captcha-signal {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.status.success {
-  color: var(--ok);
-  font-weight: 800;
+.status,
+.captcha-signal {
+  border-radius: 8px;
 }
 
-.status.warning {
+.status:not(:empty),
+.captcha-signal {
+  border: 1px solid var(--line);
+  padding: 11px 12px;
+  background: #fff;
+}
+
+.status.success,
+.captcha-signal.success {
+  color: var(--ok);
+  font-weight: 800;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.status.warning,
+.captcha-signal.warning {
   color: var(--accent);
   font-weight: 800;
+  border-color: #fed7aa;
+  background: #fff7ed;
+}
+
+.status.pending,
+.captcha-signal.pending {
+  color: var(--muted);
+  border-color: #cfe0f2;
+  background: #f8fafc;
 }
 
 .signal-meter {

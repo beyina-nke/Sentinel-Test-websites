@@ -14,19 +14,19 @@ This workspace contains six static demo websites, each with a contact form using
 | `altcha-lab/` | ALTCHA | 2 pages | Uses the `altcha-widget` web component with a challenge endpoint placeholder. |
 | `passive-guard/` | Passive Guard simulation | SPA | Local behavior scoring demo that mimics passive bot detection feedback. |
 
-Open `index.html` in a browser to browse the demos.
+Open `index.html` in a browser to browse the demos, or run the PHP server below to enable both server-backed submissions and the ALTCHA challenge endpoint.
 
-Open `submissions.html` to view submitted form payloads saved locally in your browser. The viewer uses `localStorage`, so it is meant for testing only.
+Open `submissions.html` to view submitted form payloads. The viewer uses `localStorage` when opened directly and `/api/submissions` when served by PHP, so it is meant for testing only.
 
-## PHP ALTCHA Server
+## PHP Test Server
 
-Run the PHP built-in server from the project root to serve the static files and the ALTCHA challenge API from the same origin:
+Run the PHP built-in server from the project root to serve the static files, the ALTCHA challenge API, and the submissions API from the same origin:
 
 ```sh
 php -S 127.0.0.1:5500 router.php
 ```
 
-Then open `http://127.0.0.1:5500/altcha-lab/contact.html`. The ALTCHA widget requests `GET /api/altcha/challenge`.
+Then open `http://127.0.0.1:5500/`. The ALTCHA widget requests `GET /api/altcha/challenge`, and submitted forms are saved through `/api/submissions`.
 
 ## Production Setup
 
